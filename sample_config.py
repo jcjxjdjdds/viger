@@ -27,21 +27,15 @@ class Config(object):
     )
     TG_BOT_USERNAME = None
     # get this value from http://www.timezoneconverter.com/cgi-bin/findzone.tzc
-    TZ = os.environ.get("TZ", "Africa/Cairo")
+    TZ = os.environ.get("TZ", "Asia/Baghdad")
     # set this with required zed repo link
     UPSTREAM_REPO = os.environ.get(
-        "UPSTREAM_REPO", "https://github.com/SWADSOURCE/th"
+        "UPSTREAM_REPO", "https://github.com/Tepthonee/PPF22"
     )
     # External plugins repo
     EXTERNAL_REPO = os.environ.get("EXTERNAL_REPO", None)
     if EXTERNAL_REPO and (EXTERNAL_REPO.lower() != "no") and not url(EXTERNAL_REPO):
         EXTERNAL_REPO = "https://github.com/Zed-Thon/ZedPlugins"
-    else:
-        EXTERNAL_REPO = None
-    # for vc plugins
-    VCMODE = os.environ.get("VCMODE", False)
-    VCMODE = bool(VCMODE and (VCMODE.lower() != "false"))
-    VC_SESSION = os.environ.get("VC_SESSION", None)    
     # if you need badcat plugins use the following vars
     OLDZED = os.environ.get("OLDZED", "no")
     OLDZED = bool(OLDZED and (OLDZED.lower() != "no"))
@@ -86,7 +80,7 @@ class Config(object):
     DEFAULT_NAME = os.environ.get("DEFAULT_NAME", None)
     ZI_FN = os.environ.get("ZI_FN", "𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵𝟬")
     CUSTOM_PMPERMIT_TEXT = os.environ.get("CUSTOM_PMPERMIT_TEXT", None)
-    
+
     # Custom vars for zthon
     # set this will channel id of your custom plugins
     PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL") or 0)
@@ -193,8 +187,7 @@ class Config(object):
     if OLDZED_REPO and not url(OLDZED_REPO):
         OLDZED_REPO = "https://github.com/Zed-Thon/ZED_USERBOT"
     OLDZED_REPOBRANCH = os.environ.get("OLDZED_REPOBRANCH", "oldzed")
-    VC_REPO = os.environ.get("VC_REPO", "https://github.com/SWADSOURCE/crvc")
-    VC_REPOBRANCH = os.environ.get("VC_REPOBRANCH", "beta")
+
 
 class Production(Config):
     LOGGER = False
